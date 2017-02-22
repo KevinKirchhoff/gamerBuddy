@@ -1,0 +1,31 @@
+.banner{
+float:center;
+padding: 20 30;
+border-style:outset;
+border-color:#808080;
+position:relative;
+}
+.logo{
+padding-left:3%;
+float:left;
+position:absolute;
+}
+.navBar{
+padding-right:2%;
+}
+.signUp{
+background-color:#7851a9;
+float:right;
+font-size:14px;
+
+}
+.login{
+background-color:#7851a9;
+float:right;
+font-size:14px;
+}
+.leftPanel{
+}
+.banner-container{
+padding-left: 20%;
+}
