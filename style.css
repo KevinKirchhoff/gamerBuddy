@@ -17,7 +17,6 @@ padding-right:2%;
 background-color:#7851a9;
 float:right;
 font-size:14px;
-
 }
 .login{
 background-color:#7851a9;
@@ -28,4 +27,13 @@ font-size:14px;
 }
 .banner-container{
 padding-left: 20%;
+}
+.first{
+display:inline;
+list-style-type:none;
+}
+#footer{
+display:block;
+padding-left:43%;
+padding-top: 150;
 }

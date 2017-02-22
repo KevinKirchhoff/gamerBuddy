@@ -1,7 +1,7 @@
 <html>
 	<?php ?>
 	<link rel="stylesheet" type="text/css" href="style.css"/>
-	<link rel="favicon" type="image/x-icon" href="favicon.ico" />
+	<link rel="icon" type="image/png" href="img/favicon.ico" />
         <header>
 	<div class ="navBar">
 	<div>	<button class="signUp" id="signUp">Sign Up!</button> </div>
