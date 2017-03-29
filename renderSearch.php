@@ -16,7 +16,7 @@ class renderSearch {
       $table .=
         "<tr>
             <td>" .htmlentities($row['game']) . "</td>
-        " ."<td>".htmlentities($row['platform']). "</td>" 
+        " ."<td>".htmlentities($row['console']). "</td>" 
           ."<td>".htmlentities($row['age']). "</td>
             <td>".htmlentities($row['note']). "</td>
         </tr>";
@@ -24,4 +24,5 @@ class renderSearch {
     $table .= "</table>";
     echo $table;
   }
+    
 }

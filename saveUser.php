@@ -1,17 +1,17 @@
 <?php
 
 require_once 'Dao.php';
-
+echo "here";
 $dao=new Dao();
 
-$firstName= htmlentities($_POST['firstName']);
-$lastName= htmlentities($_POST['lastName']);
+$fName= htmlentities($_POST['fName']);
+$lName= htmlentities($_POST['lName']);
 $email= htmlentities($_POST['email']);
 $zipcode= htmlentities($_POST['zipcode']);
 $username= htmlentities($_POST['username']);
 $password= htmlentities($_POST['password']);
 
-$dao->saveUser($firstName,$lastName,$email,$zipcode,$username,$password);
+$dao->saveUser($fName,$lName,$email,$zipcode,$username,$password);
 
 
 

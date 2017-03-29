@@ -2,8 +2,8 @@
 <?php include("header.php");
       require_once("renderSearch.php");
     require_once("dao.php");
-    $dao = new Dao();
     session_start();
+   
 ?>
 <body bgcolor="000000">
 
@@ -61,19 +61,71 @@
 								echo $_SESSION["UsernameNotEntered"];
 								echo "<br>";
 							}
-							if(isset($_SESSION["PasswordNotEntered"])){
-								echo $_SESSION["PasswordNotEntered"];
+							if(isset($_SESSION["passwordNotEntered"])){
+								echo $_SESSION["passwordNotEntered"];
 								echo "<br>";
 							}
 							if(isset($_SESSION["ConfirmPasswordNotEntered"])){
 								echo $_SESSION["ConfirmPasswordNotEntered"];
 								echo "<br>";
 							}
+                 
+                
+                $dao = new Dao();
+
+
+$fName= $_SESSION['fName'];
+$lName= $_SESSION['lName'];
+$email= $_SESSION['email'];
+$zipcode= $_SESSION['zipcode'];
+$username= $_SESSION['username'];
+$password= $_SESSION['password'];
+                if(isset($_SESSION["errorFirstNameNotEntered"]) || isset($_SESSION["errorLastNameNotEntered"]) 
+		|| isset($_SESSION["errorEmailNotEntered"]) || isset($_SESSION["UsernameNotEntered"]) 
+		|| isset($_SESSION["PasswordNotEntered"])
+		|| isset($_SESSION["ConfirmPasswordNotEntered"])){
+			
+			header('Location: signup.php');
+	}else{
+            
+                   
+            if($dao->getConnection()){
+                if($dao->checkuser($username)){
+                    unset($_SESSION['UsernameTaken']);
+				    $_SESSION["UsernameTaken"] = "Username taken!";
+                    echo $_SESSION["UsernameTaken"];
+				    header('Location: signup.php');
+                }
+                else{
+                    
+                      $dao->saveUser($fName,$lName,$email,$zipcode,$username,$password);
+                    session_unset();
+                  
+                 
+    $_SESSION["CreateSuccess"] = "Account Created Successfully!";
+  
+   
+                    header("Location:registered.php");
+ 
+                }
+            }
+                else{
+                    echo "connection broke";
+                }
+                    
+                
+                }
+
+ 
+ 
+                
             ?>
             </div>
         </div>   
     </div>
     </body>
+    
     <?php include("footer.php");
 ?>
+
 </html>

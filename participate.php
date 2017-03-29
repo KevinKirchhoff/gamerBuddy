@@ -1,6 +1,7 @@
 <html>
 <?php
   include("header.php");
+     session_start();
 ?>
 <head>
   <title>GamerBuddy</title>
@@ -18,7 +19,7 @@
          <td>Game:</td> <td><input type="text" name="game"></td><br>
         </tr>
         <tr>
-         <td>Gaming Platform:</td> <td><input type="text" name="platform"></td><br>
+         <td>Gaming Platform:</td> <td><input type="text" name="console"></td><br>
         </tr>
         <tr>
          <td>Age:</td> <td><input type="text" name="age"><br>
