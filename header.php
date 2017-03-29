@@ -1,13 +1,21 @@
 <html>
 	<?php ?>
-	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="icon" type="image/png" href="img/favicon.ico" />
-        <header>
+<header>
 	<div class ="navBar">
-	<div>	<button class="signUp" id="signUp">Sign Up!</button> </div>
-	<div>	<button class="login" id="Login">Login</button> </div>
+	   <div>
+           <form action="signUp.php">	
+               <button class="signUp" id="signUp">Sign Up!</button> 
+           </form> 
+        </div>
+	   <div>
+            <form action="login.php">	
+                <button class="login" id="Login">Login</button>
+            </form> 
+        </div>
 	</div>
-	</header>
+</header>
 	<body>
 		<div>
 			<div>
@@ -15,9 +23,30 @@
 			</div>
 		</div>
 		<div class="banner-container">
-			<div id"bannerMain">
+			<div id="bannerMain">
 				<img class="banner" src="img/gamerBuddybanner3.png" />
 			</div>
 		</div>
+        <div class="navLeft">
+            <ul class="nav">
+                <li>
+                    <form action="index.php">	
+                        <button class="navvy">Home!</button> 
+                    </form> </li>
+                <li>
+                 <form action="participate.php">	
+                        <button class="navvy">Participate</button> 
+                    </form> </li>
+                <li><form action="search.php">	
+                        <button class="navvy">Search</button> 
+                    </form> </li>
+                <li> <form action="faq.php">	
+                        <button class="navvy">FAQ</button> 
+                    </form> </li>
+                <li> <form action="aboutUs.php">	
+                        <button class="navvy">About Us</button> 
+                    </form> </li>
+            </ul>
+        </div>
 	</body>
 </html>
