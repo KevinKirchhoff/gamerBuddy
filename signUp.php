@@ -97,16 +97,19 @@ $password= $_SESSION['password'];
 				    header('Location: signup.php');
                 }
                 else{
-                    
+                     if(isset($_SESSION["fName"]) && isset($_SESSION["flName"]) &&
+                        isset($_SESSION["email"]) &&
+                        isset($_SESSION["username"]) &&
+                        isset($_SESSION["password"]) {
                       $dao->saveUser($fName,$lName,$email,$zipcode,$username,$password);
                     session_unset();
                   
                  
     $_SESSION["CreateSuccess"] = "Account Created Successfully!";
-            if(isset($_SESSION["CreateSuccess"])){
+    
                 header("Location:registered.php");
  
-            }
+                     }
    
                     
                 }
