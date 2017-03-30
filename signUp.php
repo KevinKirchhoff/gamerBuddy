@@ -97,7 +97,7 @@
                         header('Location: signup.php');
                     }
 
-
+                    
                     if ($dao->getConnection()) {
                         /*
                           unset($_SESSION['UsernameTaken']);
@@ -106,7 +106,7 @@
                           header('Location: signup.php');
                          */
                         $dao->saveUser($fName, $lName, $email, $zipcode, $username, $password);
-                        session_unset();
+                        
                         
                         var_dump($_SESSION);
                         $_SESSION["CreateSuccess"] = "Account Created Successfully!";
