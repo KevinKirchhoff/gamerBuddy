@@ -93,7 +93,7 @@
                         header('Location: signup.php');
                     } 
 
-
+                    
                         if ($dao->getConnection()) {
                             /*
                               unset($_SESSION['UsernameTaken']);
@@ -106,7 +106,7 @@
 
                             $_SESSION["CreateSuccess"] = "Account Created Successfully!";
 
-                            header("Location:registered.php");
+                           
                         } else {
                             echo "connection broke";
                         }
