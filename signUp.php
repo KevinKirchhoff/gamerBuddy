@@ -97,6 +97,8 @@
                         header('Location: signup.php');
                     }
 
+                    if(isset($_SESSION['registered'] )){
+                        
                     
                     if ($dao->getConnection()) {
                         /*
@@ -107,11 +109,12 @@
                          */
                         $dao->saveUser($fName, $lName, $email, $zipcode, $username, $password);
                         
-                        
+                        session_unset();
                         var_dump($_SESSION);
                         $_SESSION["CreateSuccess"] = "Account Created Successfully!";
                     } else {
                         echo "connection broke";
+                    }
                     }
                     ?>
                 </div>
