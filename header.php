@@ -12,8 +12,21 @@
            </form> 
         </div>
 	   <div>
-            <form action="login.php">	
-                <button class="login" id="Login">Login</button>
+           
+            <form action="login.php">
+                
+                 <?php  
+                 if (isset($_SESSION["loggedIn"])) {   
+                    
+                    echo '<button class="logout" id="logout">Logout</button>';
+                 } 
+                  else{
+                      
+                  echo '<button class="login" id="Login">Login</button>';
+                  
+                  
+                  }
+                  ?>
             </form> 
         </div>
 	</div>

@@ -88,7 +88,7 @@ if(isset($_SESSION["errorFirstNameNotEntered"]) || isset($_SESSION["errorLastNam
 			header('Location: signUp.php');
 	}
 else{
-            session_unset();
+           
             $_SESSION['registered'] = "registered";
             
     header("Location:registered.php");

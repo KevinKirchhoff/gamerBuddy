@@ -27,10 +27,12 @@
                                 ?>"><br>
                         </tr>
                         <tr>
-                            <td>Email :</td> <td><input type="email" name="email" value="<?php
-                                                        if (isset($_SESSION['email'])) {
-                                                            echo htmlentities($_SESSION['email']);
-                                                        }
+                            <td>Email :</td> 
+                            <td>
+                                <input type="email" name="email" value="<?php
+                                    if (isset($_SESSION['email'])) {
+                                        echo htmlentities($_SESSION['email']);
+                                    }
                                                         ?>"><br>
                         </tr>
                         <tr>
@@ -50,9 +52,9 @@
                             <td>Confirm Password:</td> <td><input type="password" name="ConfirmPassword"><br>
                         </tr>
                         <tr >
-                            <td style="padding-bottom:15px;"><form action="submit.php">
-                                    <button class="submit" id="Submit">Submit!</button>
-                                </form> </td>
+                            <td style="padding-bottom:15px;">
+                                    <button class="submit" id="Submit" type="submit">Submit!</button>
+                                 </td>
                         </tr>
                     </table>
                 </form>
@@ -112,6 +114,7 @@
                         session_unset();
                         var_dump($_SESSION);
                         $_SESSION["CreateSuccess"] = "Account Created Successfully!";
+                        
                     } else {
                         echo "connection broke";
                     }

@@ -23,9 +23,9 @@
                         </tr>
 
                         <tr >
-                            <td style="padding-bottom:15px;"><form action="submit.php">	
-                                    <button class="submit" id="Submit">Submit!</button> 
-                                </form> </td>
+                            <td style="padding-bottom:15px;">	
+                                    <button class="submit" id="Submit" type="submit">Submit!</button> 
+                                </td>
                         </tr>
                     </table>
                 </form>
@@ -44,23 +44,27 @@
 
 
 
-                    if($_SESSION['loggedIn']){
-                    header('location:participate.php');
+                    if(isset($_SESSION['loggedIn'])){
+                        header('location:participate.php');
                     }
-                    if($_SESSION['registered']){
-                    $dao = new Dao();
-                    $username = $_SESSION['username'];
-                    $password = $_SESSION['password'];
+                   
+                    if(isset($_SESSION['registered'])){
+                        $dao = new Dao();
+                        $username = $_SESSION['username'];
+                        $password = $_SESSION['password'];
                     if( $dao->getConnection() ){
-                    $isValid = $dao->checkUserAndPass($username, $password);
+                        $isValid = $dao->checkUserAndPass($username, $password);
+                        var_dump($isValid);
                     if($isValid){ //valid username and password combination in database
-                    session_unset();
-                    $_SESSION['loggedIn'] = $_SESSION['username'];
-                    echo $_SESSION['loggedIn'] . " logged in";
-
+                        echo "heres";
+                        $_SESSION = array();
+                       
+                        $_SESSION['loggedIn'] = "logged in";
+                        var_dump($_SESSION);
+                     
                     }else{
-                    $_SESSION['invalid'] = " invalid username or password!";
-
+                        $_SESSION['invalid'] = " invalid username or password!";
+                        echo $_SESSION['invalid'];
                     }
                     }
                     else{

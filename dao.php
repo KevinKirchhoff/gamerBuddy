@@ -20,7 +20,7 @@ class Dao{
           $conn = new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user,
                 $this->pass);
         } catch (Exception $e) {
-          echo "issue with the connections";
+          echo "issue with the connections getConnection";
            exit;
         }
         return $conn;
