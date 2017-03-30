@@ -79,6 +79,7 @@ if(isset($_POST["ConfirmPassword"])  && $_POST["ConfirmPassword"] != "" && $_POS
 		}
 	}
 
+
 if(isset($_SESSION["errorFirstNameNotEntered"]) || isset($_SESSION["errorLastNameNotEntered"]) 
 		|| isset($_SESSION["errorEmailNotEntered"]) || isset($_SESSION["UsernameNotEntered"]) 
 		|| isset($_SESSION["PasswordNotEntered"])
@@ -86,7 +87,7 @@ if(isset($_SESSION["errorFirstNameNotEntered"]) || isset($_SESSION["errorLastNam
 			
 			header('Location: signUp.php');
 	}
-else{
+elseif (isset($_SESSION['fName'])){
     header("Location:registered.php");
 }
 

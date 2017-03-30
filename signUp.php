@@ -103,10 +103,12 @@ $password= $_SESSION['password'];
                   
                  
     $_SESSION["CreateSuccess"] = "Account Created Successfully!";
-  
-   
-                    header("Location:registered.php");
+            if(isset($_SESSION["CreateSuccess"])){
+                header("Location:registered.php");
  
+            }
+   
+                    
                 }
             }
                 else{
