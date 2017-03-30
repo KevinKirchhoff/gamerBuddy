@@ -17,7 +17,7 @@ $dao->save($game,$console,$age,$note);
 
 header("Location:search.php");
 
-end;
+
 
     
 
