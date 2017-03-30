@@ -18,9 +18,7 @@
         <tr>
          <td>Password :</td> <td><input type="password" name="password"></td><br>
         </tr>
-        <tr>
-         <td>Confirm Password :</td> <td><input type="password" name="ConfirmPassword"><br>
-        </tr>
+        
         <tr >
          <td style="padding-bottom:15px;"><form action="submit.php">	
                <button class="submit" id="Submit">Submit!</button> 
@@ -40,16 +38,11 @@
 								echo "<br>";
 								unset($_SESSION['passwordNotEntered']);
 							}
-                if(isset($_SESSION["ConfirmPasswordNotEntered"])){
-								echo $_SESSION["ConfirmPasswordNotEntered"];
-								echo "<br>";
-							}
+                
                
                 if(isset($_SESSION["usernameNotEntered"]) || isset($_SESSION["passwordNotEntered"])){
-                      echo ['usernameNotEntered'];
-                    echo ['passwordNotEntered'];
                     
-		              header('Location: login.php');
+		          header("Location:registered.php");
 	               }
                 else{
                     
@@ -62,10 +55,10 @@
                            session_unset();
 				$_SESSION["authed_user"] = $_SESSION['username'];
                            echo $_SESSION["authed_user"] . " logged in";
-                            header('Location: login.php');
+                         
 			}else{
 				$_SESSION['invalid'] = " invalid username or password!";
-				header('Location: login.php');
+				
 			}
                 }
                     else{

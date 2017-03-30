@@ -26,20 +26,6 @@ if(isset($_POST["password"])  && $_POST["password"] != ""){
 		unset($_SESSION['password']);
 		$_SESSION["passwordNotEntered"] = "Must enter a password!";
 	}
-if(isset($_POST["ConfirmPassword"])  && $_POST["ConfirmPassword"] != "" && $_POST["ConfirmPassword"] === $_POST["password"]){
-		$ConfirmPassword = $_POST["ConfirmPassword"];
-		$_SESSION["ConfirmPassword"] = $ConfirmPassword;
-		unset($_SESSION['ConfirmPasswordNotEntered']);
-	}
-	else{
-		unset($_SESSION['ConfirmPassword']);
-		if($_POST["ConfirmPassword"] === ""){
-			$_SESSION["ConfirmPasswordNotEntered"] = "Must enter a second password!";
-		}
-		else{
-			$_SESSION["ConfirmPasswordNotEntered"] = "Passwords must match!";
-		}
-	}
 
 
 
