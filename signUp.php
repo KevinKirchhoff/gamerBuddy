@@ -2,6 +2,7 @@
 <?php include("header.php");
       require_once("renderSearch.php");
     require_once("dao.php");
+    include_once("signUpHander.php")
     session_start();
    
 ?>
