@@ -47,7 +47,7 @@
                     if($_SESSION['loggedIn']){
                     header('location:participate.php');
                     }
-
+                    if($_SESSION['registered']){
                     $dao = new Dao();
                     $username = $_SESSION['username'];
                     $password = $_SESSION['password'];
@@ -66,7 +66,7 @@
                     else{
                     echo "no db connection";
                     }
-                    
+                    }
                     ?>
                 </div>
             </div>   
