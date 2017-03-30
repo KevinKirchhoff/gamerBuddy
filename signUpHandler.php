@@ -90,17 +90,5 @@ if(isset($_SESSION["errorFirstNameNotEntered"]) || isset($_SESSION["errorLastNam
 else{
     header("Location:registered.php");
 }
-
-
-
-
-
-
 end;
-
-
-
-
-
-
 ?>

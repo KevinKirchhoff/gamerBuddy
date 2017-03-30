@@ -11,12 +11,12 @@
  <body bgcolor="#000000">
          <div class="jumbotron">
     <div class="jumbo3">
-    <h2>Post: Here!! </h2>
-        
-      <?php 
-        
-        renderSearch::renderTable($dao->getRequest());?>
-       
+    <h2>Posts:</h2>
+        <div class ="table1">
+      <?php  
+        renderSearch::renderTable($dao->getRequest());
+       ?>
+        </div>
     </div>
    
 </div>
