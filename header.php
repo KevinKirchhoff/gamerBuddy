@@ -18,7 +18,7 @@
                  <?php  
                  if (isset($_SESSION["loggedIn"])) {   
                     
-                    echo '<button class="logout" id="logout">Logout</button>';
+                    echo '<button class="logout" id="logout action="logout.php">Logout</button>';
                  } 
                   else{
                       
