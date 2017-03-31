@@ -56,8 +56,7 @@
                         $isValid = $dao->checkUserAndPass($username, $password);
                         var_dump($isValid);
                     if($isValid){ //valid username and password combination in database
-                        echo "heres";
-                        $_SESSION = array();
+                      
                        
                         $_SESSION['loggedIn'] = "logged in";
                         var_dump($_SESSION);

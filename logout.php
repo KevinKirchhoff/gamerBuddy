@@ -3,4 +3,5 @@ session_start();
    unset($_SESSION["username"]);
    unset($_SESSION["password"]);
    session_unset();
+   $_SESSION = array();
 ?>
