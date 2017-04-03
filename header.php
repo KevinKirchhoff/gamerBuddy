@@ -12,11 +12,14 @@
            </form> 
         </div>
 	   <div>
-           
-            <form action="login.php">
-                
-                 <?php  
-                 if (isset($_SESSION["loggedIn"])) {   
+            <?php  
+                 if (isset($_SESSION['loggedIn'])) {   
+                    echo '<form action="logout.php">';
+                 } 
+                  else{
+                  echo '<form action="login.php">';
+                  }
+                 if (isset($_SESSION['loggedIn'])) {   
                     
                     echo '<button class="logout" id="logout action="logout.php">Logout</button>';
                  } 

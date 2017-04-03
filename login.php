@@ -42,34 +42,16 @@
                     unset($_SESSION['passwordNotEntered']);
                     }
 
-
+                    
 
                     if(isset($_SESSION['loggedIn'])){
-                        header('location:participate.php');
+                        echo $_SESSION['loggedIn'];
+                        var_dump($_SESSION);
+                    }else{
+                        echo "loggedOut";
                     }
                    
-                    if(isset($_SESSION['registered'])){
-                        $dao = new Dao();
-                        $username = $_SESSION['username'];
-                        $password = $_SESSION['password'];
-                    if( $dao->getConnection() ){
-                        $isValid = $dao->checkUserAndPass($username, $password);
-                        var_dump($isValid);
-                    if($isValid){ //valid username and password combination in database
-                      
-                       
-                        $_SESSION['loggedIn'] = "logged in";
-                        var_dump($_SESSION);
-                     
-                    }else{
-                        $_SESSION['invalid'] = " invalid username or password!";
-                        echo $_SESSION['invalid'];
-                    }
-                    }
-                    else{
-                    echo "no db connection";
-                    }
-                    }
+                    
                     ?>
                 </div>
             </div>   

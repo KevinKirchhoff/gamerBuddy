@@ -33,7 +33,8 @@
                                     if (isset($_SESSION['email'])) {
                                         echo htmlentities($_SESSION['email']);
                                     }
-                                                        ?>"><br>
+                                ?>
+                                       "><br>
                         </tr>
                         <tr>
                             <td>Zip code:</td> <td><input type="zipcode" name="zipcode"><br>
@@ -53,7 +54,7 @@
                         </tr>
                         <tr >
                             <td style="padding-bottom:15px;">
-                                    <button class="submit" id="Submit" type="submit">Submit!</button>
+                                    <button class="submit" id="Submit" type="submit"> Submit! </button>
                                  </td>
                         </tr>
                     </table>
@@ -83,42 +84,19 @@
                         echo $_SESSION["ConfirmPasswordNotEntered"];
                         echo "<br>";
                     }
+                    
 
+                   
 
-                    $dao = new Dao();
-
-
-                    $fName = $_SESSION['fName'];
-                    $lName = $_SESSION['lName'];
-                    $email = $_SESSION['email'];
-                    $zipcode = $_SESSION['zipcode'];
-                    $username = $_SESSION['username'];
-                    $password = $_SESSION['password'];
+                    
                     if (isset($_SESSION["errorFirstNameNotEntered"]) || isset($_SESSION["errorLastNameNotEntered"]) || isset($_SESSION["errorEmailNotEntered"]) || isset($_SESSION["UsernameNotEntered"]) || isset($_SESSION["PasswordNotEntered"]) || isset($_SESSION["ConfirmPasswordNotEntered"])) {
 
                         header('Location: signup.php');
                     }
+                   
+                   
 
-                    if(isset($_SESSION['registered'] )){
-                        
-                    
-                    if ($dao->getConnection()) {
-                        /*
-                          unset($_SESSION['UsernameTaken']);
-                          $_SESSION["UsernameTaken"] = "Username taken!";
-                          echo $_SESSION["UsernameTaken"];
-                          header('Location: signup.php');
-                         */
-                        $dao->saveUser($fName, $lName, $email, $zipcode, $username, $password);
-                        
-                        session_unset();
-                        var_dump($_SESSION);
-                        $_SESSION["CreateSuccess"] = "Account Created Successfully!";
-                        
-                    } else {
-                        echo "connection broke";
-                    }
-                    }
+                   
                     ?>
                 </div>
             </div>

@@ -89,9 +89,31 @@ if(isset($_SESSION["errorFirstNameNotEntered"]) || isset($_SESSION["errorLastNam
 	}
 else{
            
-            $_SESSION['registered'] = "registered";
+          session_unset();
+               $dao = new Dao();
+            if ($dao->getConnection()) {
+              
+                        /*
+                          unset($_SESSION['UsernameTaken']);
+                          $_SESSION["UsernameTaken"] = "Username taken!";
+                          echo $_SESSION["UsernameTaken"];
+                          header('Location: signup.php');
+                         */
+                    
+              
+                        $dao->saveUser($fName, $lName, $email, $zipcode, $username, $password);
+                        
+                       
+                        
+                        $_SESSION["CreateSuccess"] = "Account Created Successfully!";
+                      
+                        header('Location: registered.php');
+                        
+                    } else {
+                        echo "connection broke";
+                    }
             
-    header("Location:registered.php");
+ 
 }
-end;
+
 ?>

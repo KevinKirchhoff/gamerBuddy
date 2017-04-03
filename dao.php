@@ -51,7 +51,7 @@ class Dao{
         }catch(Exception $e){
             echo e;
         }
-        $saveQuery = "INSERT INTO UserData (id_user, firstName, lastName, email, zipcode, username, password) VALUES (NULL, :fName,:lName,:email,:zipcode,:username,:password );";
+        $saveQuery = "INSERT INTO UserData (firstName, lastName, email, zipcode, username, password) VALUES (:fName,:lName,:email,:zipcode, :username,:password );";
         $q=$conn->prepare($saveQuery); 
             
         $q->bindParam(":fName", $fName);
@@ -73,7 +73,7 @@ class Dao{
   }
     public function checkUserAndPass ($username, $password) {
     $conn = $this->getConnection();
-    $getQuery = "SELECT username FROM UserData WHERE username = :username AND password = :password";
+    $getQuery = "SELECT username FROM UserData WHERE username = ':username' AND password = ':password'";
         
     $q = $conn->prepare($getQuery);
     $q->bindParam(":username", $username);
