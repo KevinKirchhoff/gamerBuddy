@@ -28,9 +28,9 @@
          <td>Notes:</td> <td><input type="note" name="note"><br>
         </tr>
         <tr >
-         <td style="padding-bottom:15px;"><form action="submit.php">	
+         <td style="padding-bottom:15px;">	
                <button class="submit" id="Submit">Submit!</button> 
-           </form> </td>
+                </td>
         </tr>
        </table>
       </form>

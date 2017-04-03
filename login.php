@@ -46,7 +46,7 @@
 
                     if(isset($_SESSION['loggedIn'])){
                         echo $_SESSION['loggedIn'];
-                        var_dump($_SESSION);
+                   
                     }else{
                         echo "loggedOut";
                     }

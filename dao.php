@@ -41,6 +41,7 @@ class Dao{
         $q->bindParam(":note", $note);
         $q->execute();
     }
+    
     public function getRequest() {
         $conn = $this->getConnection();
          return $conn->query("select game,console,age,note from buddyPost;");
